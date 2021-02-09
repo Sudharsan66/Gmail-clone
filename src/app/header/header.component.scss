@@ -66,5 +66,11 @@ color:#fff;
     color:#FFF;
     border-radius: 10px;
  }
+ .menu{
+   .main-menu:hover,nav.main-menu.expanded {
+      width:250px;
+      overflow:visible;
+      }
+ }
  
 
