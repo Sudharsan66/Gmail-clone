@@ -1,7 +1,7 @@
 <div class="mail-wrapper">
     <div class="check">
         <input type="checkbox" />
-        <input class="star" type="checkbox" title="bookmark page">
+        <input class="star" type="checkbox" [checked]=item.isStarred  title="bookmark page">
     </div>
     <div class="title">{{item.title}}</div>
     <div class="subject">{{item.subject?item.subject:"(no subject)"}} - {{item.data}}</div>

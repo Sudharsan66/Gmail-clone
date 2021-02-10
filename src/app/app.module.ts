@@ -9,6 +9,8 @@ import { MailComponent } from './mail/mail.component';
 import { SidehovermenuComponent } from './sidehovermenu/sidehovermenu.component';
 import { LabelComponent } from './label/label.component';
 import { RightmenuComponent } from './rightmenu/rightmenu.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { RightmenuComponent } from './rightmenu/rightmenu.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

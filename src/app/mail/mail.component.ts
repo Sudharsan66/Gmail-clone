@@ -10,6 +10,9 @@ export class MailComponent implements OnInit {
   
   icons=["archive","delete","email","access_time"]
   constructor() { }
+  changeStar(){
+    
+  }
   ngOnInit(): void {
   }
 
