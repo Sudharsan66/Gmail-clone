@@ -15,6 +15,7 @@
 }
 .main-menu:hover {
   position: absolute;
+  background-color: #fff;
 }
 .main-menu:hover,
 nav.main-menu.expand {
@@ -123,7 +124,7 @@ nav.main-menu li.active > a,
   width: 100%;
   height: 100%;
 }
-.big{
+.big {
   font-size: 70px;
 }
 @font-face {
