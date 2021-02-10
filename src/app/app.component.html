@@ -1,9 +1,19 @@
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-<body>
-
-<app-header ></app-header> 
-<!-- <app-sidebar></app-sidebar> --> 
-<app-sidehovermenu></app-sidehovermenu>
-<!-- <app-mails></app-mails>  -->
-</body>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<div>
+    <app-header [toggle]=toggle (expandClass)=setClass($event)></app-header>
+    <div class="main {{toggle?'expand':'shrink'}}" >
+        <div class="left-menu"><app-sidehovermenu [toggle]=toggle></app-sidehovermenu></div>
+        <div class="middle-content">
+            <div class="mail-header-wrapper">
+                <div class="mail-header" *ngFor="let label of labels" (click)="changeSelected(label.id)">
+                    <app-label [item]=label></app-label>
+                </div>
+            </div>
+            <app-mail *ngFor="let each of content" [item]=each></app-mail>
+        </div>
+       <div class="right-menu">
+            <app-rightmenu></app-rightmenu>
+       </div>
+    </div>
+</div>

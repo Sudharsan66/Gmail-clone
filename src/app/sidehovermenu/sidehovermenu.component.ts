@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sidehovermenu',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidehovermenu.component.scss']
 })
 export class SidehovermenuComponent implements OnInit {
-
+  @Input() toggle:any;
   constructor() { }
 
   ngOnInit(): void {

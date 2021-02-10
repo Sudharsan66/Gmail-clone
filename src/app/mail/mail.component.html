@@ -1,0 +1,14 @@
+<div class="mail-wrapper">
+    <div class="check">
+        <input type="checkbox" />
+        <input class="star" type="checkbox" title="bookmark page">
+    </div>
+    <div class="title">{{item.title}}</div>
+    <div class="subject">{{item.subject?item.subject:"(no subject)"}} - {{item.data}}</div>
+    <div class="date">{{item.date | date | slice:0:5}} </div>
+    <div class="icon-wrapper">
+        <div class="icon" *ngFor="let icon of icons">
+            <i class="material-icons">{{icon}}</i>
+        </div>
+    </div>
+</div>

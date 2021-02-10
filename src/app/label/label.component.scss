@@ -1,0 +1,42 @@
+.label-wrapper {
+  width: 100%;
+  cursor: pointer;
+  height: 100%;
+}
+.labels {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  i{
+      padding: 10px;
+  }
+  .text{
+    text-transform: capitalize;
+    padding: 10px;
+  }
+}
+
+.selected .primary{
+  color: #d93025;
+  border-bottom: 3px solid #d93025;
+}
+.selected .social{
+  color: #1a73e8;
+  border-bottom: 3px solid #1a73e8;
+}
+.selected .promotions{
+  color: #188038;;
+  border-bottom:3px solid#188038;
+}
+.selected .updates{
+  color: #e37400;
+  border-bottom:  3px solid #e37400;
+}
+.selected .forums{
+  color: #a142f4;
+  border-bottom:3px solid  #a142f4;
+}
+.label-wrapper:hover{
+  background-color: rgba(32,33,36,0.059);
+}
