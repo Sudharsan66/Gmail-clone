@@ -1,9 +1,6 @@
-body {
-  width: 100%;
-}
+
 .navbar {
   margin: 0;
-  margin-right: 10px;
   color: #fff;
   border-radius: unset !important;
 }
@@ -13,7 +10,7 @@ body {
   height: 40px;
 }
 .menu > .left {
-  justify-content: left;
+  float: left;
 }
 
 .menu > .right {
@@ -30,7 +27,7 @@ i {
 .inputContainer {
   width: 700px;
   height: 30px;
-
+  
   background: transparent;
 }
 .icon {
