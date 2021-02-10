@@ -1,14 +1,15 @@
-<div class="mail-wrapper">
+<div class="mail-wrapper" [ngClass]="item.isRead?'read':''">
     <div class="check">
         <input type="checkbox" />
-        <input class="star" type="checkbox" [checked]=item.isStarred  title="bookmark page">
+        <input class="star" type="checkbox" [checked]=item.isStarred (change)="toggleStarred($event,item.id)"
+            title="bookmark page">
     </div>
     <div class="title">{{item.title}}</div>
     <div class="subject">{{item.subject?item.subject:"(no subject)"}} - {{item.data}}</div>
     <div class="date">{{item.date | date | slice:0:5}} </div>
     <div class="icon-wrapper">
         <div class="icon" *ngFor="let icon of icons">
-            <i class="material-icons">{{icon}}</i>
+            <i class="material-icons" (click)="icon === 'delete' && deleteMail(item.id)">{{icon}}</i>
         </div>
     </div>
 </div>

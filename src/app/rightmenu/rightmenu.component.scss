@@ -4,10 +4,11 @@
   align-items: center;
   height: 350px;
   justify-content: space-between;
+
   cursor: pointer;
-  .top{
+  .top {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: space-evenly;
     height: 75%;
   }
