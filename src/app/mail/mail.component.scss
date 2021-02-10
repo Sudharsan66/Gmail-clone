@@ -1,6 +1,6 @@
 .mail-wrapper {
   z-index: -3;
-  height: 50px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -79,9 +79,27 @@
     }
   }
 }
+.mail-wrapper.read {
+  background-color: whitesmoke !important;
+}
 .mail-wrapper:hover {
-  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgb(60 64 67 / 30%),
+    0 1px 3px 1px rgb(60 64 67 / 15%);
   z-index: 1;
+  .star {
+    color: rgb(84, 85, 83);
+  }
+  .icon-wrapper {
+    display: flex;
+  }
+  .subject {
+    width: 65%;
+  }
+  .date {
+    display: none;
+  }
+}
+.mail-wrapper.read:hover {
   .star {
     color: rgb(84, 85, 83);
   }
