@@ -13,7 +13,7 @@
   height: 40px;
 }
 .menu > .left {
-  justify-content: left;
+  float: left;
 }
 
 .menu > .right {
@@ -23,6 +23,8 @@
 
 .inputContainer {
   width: 700px;
+  height: 30px;
+  
   background: transparent;
   display:flex;
   justify-content: flex-start;
