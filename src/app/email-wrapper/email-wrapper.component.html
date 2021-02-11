@@ -1,0 +1,11 @@
+<div class="mail-header-wrapper">
+    <div class="mail-header" *ngFor="let label of labels" (click)="changeSelected(label.id)">
+        <app-label [item]=label></app-label>
+    </div>
+    <div class="mail-header" *ngIf="content.id==4">
+        <app-label [item]=content.id></app-label>
+    </div>
+</div>
+<app-mail *ngFor="let each of content" [item]=each (deleteEmitter)="deleteEmail($event)"
+    (starredEmitter)="toggleMailStar($event)">
+</app-mail>

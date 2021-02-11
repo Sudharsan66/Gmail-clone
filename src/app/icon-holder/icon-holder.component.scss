@@ -1,0 +1,25 @@
+.icons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  i {
+    cursor: pointer;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    color: rgb(74, 74, 74);
+  }
+  i:hover {
+    border-radius: 50%;
+    background-color: rgba(32, 33, 36, 0.059);
+  }
+
+  i:nth-child(3n + 1) {
+    border-right: 2px solid rgb(236, 239, 241);
+  }
+  i:nth-child(1) {
+    border-right: none;
+  }
+}

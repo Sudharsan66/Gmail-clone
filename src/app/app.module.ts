@@ -12,6 +12,8 @@ import { RightmenuComponent } from './rightmenu/rightmenu.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SingleMailComponent } from './single-mail/single-mail.component';
+import { IconHolderComponent } from './icon-holder/icon-holder.component';
+import { EmailWrapperComponent } from './email-wrapper/email-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { SingleMailComponent } from './single-mail/single-mail.component';
     LabelComponent,
     RightmenuComponent,
     SingleMailComponent,
+    IconHolderComponent,
+    EmailWrapperComponent,
   ],
   imports: [
     BrowserModule,
