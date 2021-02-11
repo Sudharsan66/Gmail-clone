@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { DataServiceService } from '../Core/Services/data-service.service';
 
 
 @Component({
@@ -13,7 +14,9 @@ export class MailComponent implements OnInit {
 
 
   icons = ["archive", "delete", "email", "access_time"]
-  constructor() { }
+  constructor(private dataService: DataServiceService) {
+
+  }
   changeStar() {
 
   }
@@ -29,4 +32,5 @@ export class MailComponent implements OnInit {
     }
     this.starredEmitter.emit(payload);
   }
+
 }

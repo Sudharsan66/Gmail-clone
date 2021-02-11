@@ -14,7 +14,6 @@ export class EmailWrapperComponent implements OnInit {
   constructor(private httpClient: HttpClient, private dataService: DataServiceService) { }
   ngOnInit(): void {
     this.labels = appConstants.labels;
-    this.dataService.loaderEmitter.emit(true);
     this.dataService.getData().subscribe(val => {
       this.content = val
       this.dataService.loaderEmitter.emit(false);

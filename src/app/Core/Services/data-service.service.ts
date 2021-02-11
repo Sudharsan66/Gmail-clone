@@ -12,6 +12,7 @@ export class DataServiceService {
 
   constructor(private httpClient: HttpClient) { }
   getData() {
+    this.loaderEmitter.emit(true);
     return this.httpClient.get(environment.API_BASE_URL + "/e-mails-list");
   }
   deleteMail(id: number) {
@@ -47,5 +48,13 @@ export class DataServiceService {
       .get(environment.API_BASE_URL + '/e-mails-list?search=' + searchQuery);
 
   }
-
+  setEmailRead(id: number, isReadMail: boolean) {
+    this.httpClient
+      .put(environment.API_BASE_URL + '/e-mails-list/' + id, {
+        isRead: isReadMail
+      })
+      .subscribe((data) => {
+        console.log('Checked ERad');
+      });
+  }
 }

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { DataServiceService } from '../Core/Services/data-service.service';
 
 
 interface Email {
@@ -26,28 +27,24 @@ export class SingleMailComponent implements OnInit {
 
   id: any;
   email: any;
-  constructor(private route: ActivatedRoute, private httpClient: HttpClient) { }
+  constructor(private route: ActivatedRoute, private httpClient: HttpClient, private dataService: DataServiceService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     console.log(this.id);
+
     this.getSingleEmail().subscribe((data) => {
       console.log(data);
       this.email = data;
     });
-    this.setEmailRead();
+    this.dataService.setEmailRead(this.id, true);
   }
   getSingleEmail() {
     return this.httpClient.get(environment.API_BASE_URL + "/e-mails-list/" + this.id);
   }
-  setEmailRead() {
-    this.httpClient
-      .put(environment.API_BASE_URL + '/e-mails-list/' + this.id, {
-        isRead: true
-      })
-      .subscribe((data) => {
-        console.log('Checked ERad');
-      });
+  unReadMail() {
+    this.dataService.setEmailRead(this.id, false);
   }
+
 
 }
