@@ -1,0 +1,26 @@
+.rightside-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 350px;
+  justify-content: space-between;
+
+  cursor: pointer;
+  .top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 75%;
+  }
+  i {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  i:hover {
+    background-color: rgba(32, 33, 36, 0.059);
+  }
+}

@@ -1,0 +1,115 @@
+.mail-wrapper {
+  z-index: -3;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #202124;
+  cursor: pointer;
+  box-shadow: inset 0 -1px 0 0 rgb(100 121 143 / 12%);
+  input {
+    height: 17px;
+    width: 17px;
+    color: rgb(182, 191, 174);
+  }
+  .star {
+    text-align: center;
+    visibility: hidden;
+    font-size: 19px;
+    cursor: pointer;
+    position: relative;
+    color: rgb(182, 191, 174);
+  }
+
+  .star:before {
+    content: "\2606";
+    position: absolute;
+    margin-top: -5px;
+    margin-left: -5px;
+    visibility: visible;
+  }
+
+  .star:checked:before {
+    content: "\2605";
+    position: absolute;
+    color: rgb(252, 220, 39);
+  }
+
+  .check {
+    display: flex;
+    justify-content: space-evenly;
+    width: 6%;
+  }
+  .title {
+    text-transform: capitalize;
+    width: 17%;
+  }
+  .subject {
+    width: 70%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 5px;
+    text-transform: capitalize;
+  }
+  .date {
+    width: 7%;
+    float: right;
+    padding: 10px;
+    font-size: 13px;
+    color: #202124;
+  }
+  .icon-wrapper {
+    display: none;
+    position: relative;
+    width: 12%;
+    height: 50px;
+  }
+  .icon {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    i {
+      color: rgba(84, 85, 83, 0.6);
+    }
+  }
+}
+.mail-wrapper.read {
+  background-color: whitesmoke !important;
+}
+.mail-wrapper:hover {
+  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgb(60 64 67 / 30%),
+    0 1px 3px 1px rgb(60 64 67 / 15%);
+  z-index: 1;
+  .star {
+    color: rgb(84, 85, 83);
+  }
+  .icon-wrapper {
+    display: flex;
+  }
+  .subject {
+    width: 65%;
+  }
+  .date {
+    display: none;
+  }
+}
+.mail-wrapper.read:hover {
+  .star {
+    color: rgb(84, 85, 83);
+  }
+  .icon-wrapper {
+    display: flex;
+  }
+  .subject {
+    width: 65%;
+  }
+  .date {
+    display: none;
+  }
+}

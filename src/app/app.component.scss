@@ -1,0 +1,56 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+body {
+    display: flex;
+    background-color: rgb(244, 247, 237);
+}
+.header {
+    background-color: red;
+    width: 100%;
+    height: 70px;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.expand {
+    .left-menu {
+        width: 17%;
+    }
+    .right-menu {
+        width: 4%;
+    }
+    .middle-content {
+        width: 77%;
+        height: 95vh;
+        overflow-y: scroll;
+    }
+}
+.shrink {
+    .left-menu {
+        width: 4%;
+    }
+    .right-menu {
+        width: 5%;
+    }
+    .middle-content {
+        width: 90%;
+        height: 95vh;
+        overflow-y: scroll;
+    }
+}
+.icon-holder {
+    height: 60px;
+    background-color: red;
+}
+.mail-header-wrapper {
+    display: flex;
+}
+.mail-header {
+    background-color: rgb(244, 247, 237);
+    height: 70px;
+    width: 20%;
+    padding-bottom: 10px;
+}
