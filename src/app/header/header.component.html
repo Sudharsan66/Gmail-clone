@@ -1,5 +1,4 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <div class="navbar head">
    <div class="main-menu"><i class="material-icons" (click)="expand()">menu</i></div>
@@ -9,15 +8,15 @@
    <div class="inputContainer">
       <div class="search-wrapper">
          <i class="material-icons" (click)="searchValue()">search</i>
-        <form>
+         <form (ngSubmit)="searchValue()">
             <input class="Field" [formControl]="search" type="text" placeholder="Search mail" />
-        </form>
+         </form>
       </div>
    </div>
    <div class="menu-right">
       <i class="material-icons">help_outline</i>
       <i class="material-icons">settings</i>
       <i class="material-icons">apps</i>
-      <i class="material-icons">	person</i>
+      <i class="material-icons"> person</i>
    </div>
 </div>

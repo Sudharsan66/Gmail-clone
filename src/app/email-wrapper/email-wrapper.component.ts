@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import * as appConstants from "src/app/Core/constants/appConstants";
+import { DataServiceService } from '../Core/Services/data-service.service';
 @Component({
   selector: 'app-email-wrapper',
   templateUrl: './email-wrapper.component.html',
@@ -8,17 +10,24 @@ import { environment } from 'src/environments/environment';
 })
 export class EmailWrapperComponent implements OnInit {
   content: any;
-  labels = [
-    { id: 1, icon: "desktop_mac", text: "primary", selected: true },
-    { id: 2, icon: "people", text: "social", selected: false },
-    { id: 3, icon: "bookmark_border", text: "promotions", selected: false },
-    { id: 4, icon: "info_outline", text: "updates", selected: false },
-    { id: 5, icon: "forum", text: "forums", selected: false },
-  ];
-  getData() {
-    return this.httpClient.get(environment.API_BASE_URL + "/e-mails-list");
+  labels: any;
+  constructor(private httpClient: HttpClient, private dataService: DataServiceService) { }
+  ngOnInit(): void {
+    this.labels = appConstants.labels;
+    this.dataService.loaderEmitter.emit(true);
+    this.dataService.getData().subscribe(val => {
+      this.content = val
+      this.dataService.loaderEmitter.emit(false);
+    });
+
+    this.dataService.globalMailSearchEmitter.subscribe((val => {
+      this.dataService.searchMailList(val).subscribe(data => {
+        this.content = data;
+        this.dataService.loaderEmitter.emit(false);
+      });
+    }));
   }
-  constructor(private httpClient: HttpClient) { }
+
   changeSelected(id: any) {
     var index = this.labels.findIndex((obj: any) => obj.selected == true);
     this.labels[index].selected = false;
@@ -27,18 +36,10 @@ export class EmailWrapperComponent implements OnInit {
   }
   deleteEmail(id: number) {
     this.content = this.content.filter((mail: any) => mail.id !== id);
-    this.httpClient
-      .delete(environment.API_BASE_URL + '/e-mails-list/' + id)
-      .subscribe((data) => { });
+    this.dataService.deleteMail(id);
   }
   toggleMailStar(payload: any) {
-    this.httpClient
-      .put(environment.API_BASE_URL + '/e-mails-list/' + payload.id, {
-        isStarred: payload.isStarred,
-      })
-      .subscribe((data) => {
-        console.log('Checked star');
-      });
+    this.dataService.toggleStarredMail(payload);
   }
-  ngOnInit(): void { this.getData().subscribe(val => this.content = val); }
+
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit,EventEmitter, Output, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { DataServiceService } from '../Core/Services/data-service.service';
 
 
 @Component({
@@ -8,15 +9,17 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Input() toggle :any;
-  search :any= new FormControl('');
-  @Output() expandClass:EventEmitter<any>=new EventEmitter();
-  constructor() { }
-  expand(){
+  @Input() toggle: any;
+  search: any = new FormControl('');
+  @Output() expandClass: EventEmitter<any> = new EventEmitter();
+
+  constructor(private dataService: DataServiceService) { }
+  expand() {
     this.expandClass.emit(!this.toggle);
   }
-  searchValue(){
-    console.log(this.search.value)
+  searchValue() {
+    console.log(this.search.value);
+    this.dataService.globalMailSearchEmitter.emit(this.search.value);
   }
   ngOnInit(): void {
   }

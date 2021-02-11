@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SingleMailComponent } from './single-mail/single-mail.component';
 import { IconHolderComponent } from './icon-holder/icon-holder.component';
 import { EmailWrapperComponent } from './email-wrapper/email-wrapper.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { EmailWrapperComponent } from './email-wrapper/email-wrapper.component';
     SingleMailComponent,
     IconHolderComponent,
     EmailWrapperComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

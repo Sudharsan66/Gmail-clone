@@ -9,3 +9,6 @@
 <app-mail *ngFor="let each of content" [item]=each (deleteEmitter)="deleteEmail($event)"
     (starredEmitter)="toggleMailStar($event)">
 </app-mail>
+<div *ngIf="!content || content.length ===0">
+    <h4>No Emails to Show</h4>
+</div>
