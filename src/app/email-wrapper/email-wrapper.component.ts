@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./email-wrapper.component.scss'],
 })
 export class EmailWrapperComponent implements OnInit {
-content: any;
+  content: any;
   labels = [
     { id: 1, icon: "desktop_mac", text: "primary", selected: true },
     { id: 2, icon: "people", text: "social", selected: false },
@@ -18,7 +18,7 @@ content: any;
   getData() {
     return this.httpClient.get(environment.API_BASE_URL + "/e-mails-list");
   }
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
   changeSelected(id: any) {
     var index = this.labels.findIndex((obj: any) => obj.selected == true);
     this.labels[index].selected = false;
@@ -29,7 +29,7 @@ content: any;
     this.content = this.content.filter((mail: any) => mail.id !== id);
     this.httpClient
       .delete(environment.API_BASE_URL + '/e-mails-list/' + id)
-      .subscribe((data) => {});
+      .subscribe((data) => { });
   }
   toggleMailStar(payload: any) {
     this.httpClient
@@ -40,5 +40,5 @@ content: any;
         console.log('Checked star');
       });
   }
-  ngOnInit(): void {this.getData().subscribe(val => this.content = val);}
+  ngOnInit(): void { this.getData().subscribe(val => this.content = val); }
 }

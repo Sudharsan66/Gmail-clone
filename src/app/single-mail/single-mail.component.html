@@ -7,7 +7,7 @@
 <div class="mail-wrapper">
     <div class="subject-wrapper">
         <div class="text">
-            Subject comes here
+            {{email.title}}
         </div>
         <div class="right">
             <span class="material-icons">
@@ -21,10 +21,10 @@
     <div class="subject-wrapper">
         <div class="subject">
             <i class="material-icons large-icons">account_circle</i>
-            <div class="large-text">email</div>
+            <div class="large-text">{{email.email}}</div>
         </div>
         <div class="right email">
-            <div>time</div>
+            <div>{{email.date |date: 'dd/MM/yyyy'}}</div>
             <i class="material-icons">
                 star_border
             </i>
@@ -36,7 +36,7 @@
             </i>
         </div>
     </div>
-    <div class="content-wrapper">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    <div class="content-wrapper">{{email.data}}
         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
         galley of type and
         scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into

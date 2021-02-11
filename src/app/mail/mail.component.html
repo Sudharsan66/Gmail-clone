@@ -1,4 +1,4 @@
-<div class="mail-wrapper" [ngClass]="item.isRead?'read':''">
+<div class="mail-wrapper" [ngClass]="item.isRead?'read':''" [routerLink]="['/',item.id]">
     <div class="check">
         <input type="checkbox" />
         <input class="star" type="checkbox" [checked]=item.isStarred (change)="toggleStarred($event,item.id)"
