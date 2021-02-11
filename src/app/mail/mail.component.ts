@@ -25,7 +25,7 @@ export class MailComponent implements OnInit {
   toggleStarred(e: any, id: number) {
     let payload = {
       id: id,
-      isStarred: e.target.checked
+      isStarred: e.target.checked,
     }
     this.starredEmitter.emit(payload);
   }

@@ -7,8 +7,12 @@
          style="height:35px;" />
    </div>
    <div class="inputContainer">
-      <i class="material-icons">search</i>
-      <input class="Field" type="text" placeholder="Search mail" />
+      <div class="search-wrapper">
+         <i class="material-icons" (click)="searchValue()">search</i>
+        <form>
+            <input class="Field" [formControl]="search" type="text" placeholder="Search mail" />
+        </form>
+      </div>
    </div>
    <div class="menu-right">
       <i class="material-icons">help_outline</i>

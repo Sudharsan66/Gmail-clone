@@ -9,7 +9,7 @@ import { MailComponent } from './mail/mail.component';
 import { SidehovermenuComponent } from './sidehovermenu/sidehovermenu.component';
 import { LabelComponent } from './label/label.component';
 import { RightmenuComponent } from './rightmenu/rightmenu.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SingleMailComponent } from './single-mail/single-mail.component';
 import { IconHolderComponent } from './icon-holder/icon-holder.component';
@@ -33,6 +33,7 @@ import { EmailWrapperComponent } from './email-wrapper/email-wrapper.component';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

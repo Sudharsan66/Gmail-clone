@@ -4,12 +4,14 @@
         <input class="star" type="checkbox" [checked]=item.isStarred (change)="toggleStarred($event,item.id)"
             title="bookmark page">
     </div>
-    <div class="title" [routerLink]="['/',item.id]">{{item.title}}</div>
-    <div class="subject">{{item.subject?item.subject:"(no subject)"}} - {{item.data}}</div>
-    <div class="date">{{item.date | date | slice:0:5}} </div>
-    <div class="icon-wrapper">
-        <div class="icon" *ngFor="let icon of icons">
-            <i class="material-icons" (click)="icon === 'delete' && deleteMail(item.id)">{{icon}}</i>
+   <div class="data" [routerLink]="['/',item.id]">
+        <div class="title" >{{item.title}}</div>
+        <div class="subject">{{item.subject?item.subject:"(no subject)"}} - {{item.data}}</div>
+        <div class="date">{{item.date | date | slice:0:5}} </div>
+        <div class="icon-wrapper">
+            <div class="icon" *ngFor="let icon of icons">
+                <i class="material-icons" (click)="icon === 'delete' && deleteMail(item.id)">{{icon}}</i>
+            </div>
         </div>
-    </div>
+   </div>
 </div>
