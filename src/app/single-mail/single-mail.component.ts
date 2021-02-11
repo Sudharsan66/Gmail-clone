@@ -34,10 +34,20 @@ export class SingleMailComponent implements OnInit {
     this.getSingleEmail().subscribe((data) => {
       console.log(data);
       this.email = data;
-    })
+    });
+    this.setEmailRead();
   }
   getSingleEmail() {
     return this.httpClient.get(environment.API_BASE_URL + "/e-mails-list/" + this.id);
+  }
+  setEmailRead() {
+    this.httpClient
+      .put(environment.API_BASE_URL + '/e-mails-list/' + this.id, {
+        isRead: true
+      })
+      .subscribe((data) => {
+        console.log('Checked ERad');
+      });
   }
 
 }
