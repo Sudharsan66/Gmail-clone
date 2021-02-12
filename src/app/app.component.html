@@ -1,13 +1,13 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-<div>
+<div style="width: 100vw; background-image: url(./assets/bg.jpg);  background-repeat: no-repeat; overflow-y: none;" >
     <app-header [toggle]=toggle (expandClass)=setClass($event)>
     </app-header>
     <div class="main {{toggle?'expand':'shrink'}}">
         <div class="left-menu">
             <app-sidehovermenu [toggle]=toggle></app-sidehovermenu>
         </div>
-        <div class="middle-content">
+        <div class="middle-content" style="background-color: #FFF; margin-left: auto;">
             <!-- <app-email-wrapper></app-email-wrapper> -->
             <!-- <app-single-mail></app-single-mail> -->
 

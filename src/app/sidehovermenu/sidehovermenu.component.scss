@@ -9,15 +9,22 @@
   text-align: center;
   vertical-align: middle;
   font-size: 20px;
+  
 }
 .main-menu:hover {
   position: absolute;
-  background-color: #fff;
+  
 }
 .main-menu:hover,
 nav.main-menu.expand {
   width: 250px;
-  overflow: visible;
+  height: 93vh;
+  background-color: rgba(0,0,0,0.8);
+  color:#FFF;
+  .fa{
+    color:#FFF;
+  }
+
 }
 .main-menu {
   // background: #212121;
@@ -28,7 +35,7 @@ nav.main-menu.expand {
   transition: width 0.05s linear;
   transition: all 0.09s;
   z-index: 1000;
-  color: #fff;
+  color: #FFF;
 }
 .main-menu > ul {
   margin: 7px 0;
@@ -73,6 +80,7 @@ nav.main-menu.expand {
   vertical-align: middle;
   width: 190px;
   font-family: "Titillium Web", sans-serif;
+  color:#FFF;
 }
 
 .no-touch .scrollable.hover {
