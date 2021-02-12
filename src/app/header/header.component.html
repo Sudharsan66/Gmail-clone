@@ -1,21 +1,27 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<div class="navbar head">
-   <div class="main-menu"><i class="material-icons" (click)="expand()">menu</i></div>
-   <div class="logo"> <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_r2.png"
-         style="height:35px;" />
+<div class="head">
+   <div class="left">
+      <div class="main-menu"><i class="material-icons" (click)="expand()">menu</i></div>
+      <div class="logo"> <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_2x_r2.png"
+            style="height:35px;" />
+      </div>
    </div>
-   <div class="inputContainer">
-      <div class="search-wrapper">
-         <i class="material-icons" (click)="searchValue()">search</i>
-         <form (ngSubmit)="searchValue()">
-            <input class="Field" [formControl]="search" type="text" placeholder="Search mail" />
-         </form>
+   <div class="middle">
+      <div class="inputContainer">
+         <div class="search-wrapper">
+            <i class="material-icons" (click)="searchValue()">search</i>
+            <form (ngSubmit)="searchValue()">
+               <input class="Field" [formControl]="search" type="text" placeholder="Search mail" />
+            </form>
+         </div>
+      </div>
+      <div *ngIf=displayset>
+         <app-settings></app-settings>
       </div>
    </div>
    <div class="menu-right">
+
       <i class="material-icons">help_outline</i>
-      <i class="material-icons">settings</i>
+      <i class="material-icons" (click)="toggleSetting()">settings</i>
       <i class="material-icons">apps</i>
       <i class="material-icons"> person</i>
    </div>

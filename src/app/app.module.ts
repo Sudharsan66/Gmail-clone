@@ -15,6 +15,7 @@ import { SingleMailComponent } from './single-mail/single-mail.component';
 import { IconHolderComponent } from './icon-holder/icon-holder.component';
 import { EmailWrapperComponent } from './email-wrapper/email-wrapper.component';
 import { LoaderComponent } from './loader/loader.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { LoaderComponent } from './loader/loader.component';
     IconHolderComponent,
     EmailWrapperComponent,
     LoaderComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,

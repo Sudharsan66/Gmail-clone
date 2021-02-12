@@ -1,53 +1,61 @@
-@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
-
+$textcolor: #fff;
+$secondary:var(--secondary-color);
+$primary: var(--primary-color);
 body {
-    display: flex;
-    background-color: rgb(244, 247, 237);
+  display: flex;
+  background-color: rgb(244, 247, 237);
 }
 .header {
-    background-color: red;
-    width: 100%;
-    height: 70px;
+  background-color: red;
+  width: 100%;
+  height: 70px;
 }
 
 .main {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 .expand {
-    .left-menu {
-        width: 17%;
-    }
-    .right-menu {
-        width: 4%;
-    }
-    .middle-content {
-        width: 99%;
-        height: 95vh;
-        overflow-y: scroll;
-    }
+  .left-menu {
+    width: 17%;
+  }
+  .right-menu {
+    width: 4%;
+  }
+  .middle-content {
+    width: 99%;
+    height: 95vh;
+    overflow-y: scroll;
+  }
 }
 .shrink {
-    .left-menu {
-        width: 4%;
-    }
-    .right-menu {
-        width: 5%;
-    }
-    .middle-content {
-        width: 99%;
-        height: 95vh;
-        overflow-y: scroll;
-    }
+  .left-menu {
+    width: 4%;
+  }
+  .right-menu {
+    width: 5%;
+  }
+  .middle-content {
+    width: 99%;
+    height: 95vh;
+    overflow-y: scroll;
+  }
 }
 .icon-holder {
-    height: 60px;
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    align-items: center;
-    .mail-icons{
-        width: 45%;
-    }
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  align-items: center;
+  .mail-icons {
+    width: 45%;
+  }
+}
+.content {
+  width: 100vw;
+  background:$primary;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-y: none;
 }

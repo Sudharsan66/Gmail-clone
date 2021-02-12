@@ -1,3 +1,4 @@
+@import "../app.component.scss";
 .fa-2x {
   font-size: 2em;
 }
@@ -9,33 +10,57 @@
   text-align: center;
   vertical-align: middle;
   font-size: 20px;
-  
 }
-.main-menu:hover {
+.shrink:hover {
   position: absolute;
-  
+  background-color: rgba(0, 0, 0, 0.8);
+  .btn {
+    border-radius: 15px;
+    height: 50px;
+    width: 80%;
+    margin-left: 20px;
+    span {
+      display: table-cell !important;
+    }
+  }
 }
-.main-menu:hover,
+.main-menu.shrink:hover,
 nav.main-menu.expand {
   width: 250px;
-  height: 93vh;
-  background-color: rgba(0,0,0,0.8);
-  color:#FFF;
-  .fa{
-    color:#FFF;
+  color: $secondary;
+  .fa {
+    color: $secondary;
   }
-
+  .btn {
+    margin-left: 20px;
+    border-radius: 15px !important;
+    width: 80%;
+    margin-left: 20px;
+    span {
+      display: table-cell !important;
+    }
+  }
 }
+.shrink,
 .main-menu {
   // background: #212121;
-  border-right: 1px solid #e5e5e5;
-  width: 60px;
+  width: 50px;
   overflow: hidden;
   -webkit-transition: width 0.05s linear;
   transition: width 0.05s linear;
   transition: all 0.09s;
   z-index: 1000;
-  color: #FFF;
+
+  color: $secondary;
+  .btn {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: 0;
+    span {
+      display: none !important;
+    }
+  }
 }
 .main-menu > ul {
   margin: 7px 0;
@@ -43,8 +68,7 @@ nav.main-menu.expand {
 .main-menu li {
   position: relative;
   display: block;
-  width: 250px;
-  height: 40px;
+  width: 235px;
   span {
     font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
@@ -56,7 +80,7 @@ nav.main-menu.expand {
   display: table;
   border-collapse: collapse;
   border-spacing: 0;
-  color: #202124;
+  color: $secondary;
   font-family: arial;
   font-size: 14px;
   text-decoration: none;
@@ -80,7 +104,7 @@ nav.main-menu.expand {
   vertical-align: middle;
   width: 190px;
   font-family: "Titillium Web", sans-serif;
-  color:#FFF;
+  color: $secondary;
 }
 
 .no-touch .scrollable.hover {
@@ -121,7 +145,9 @@ nav.main-menu li.active > a,
 .no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
 .dashboard-page nav.dashboard-menu ul li.active a {
   color: #fff;
-  background-color: #5fa2db;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
 }
 .area {
   float: left;
@@ -141,28 +167,26 @@ nav.main-menu li.active > a,
       format("woff");
 }
 .btn {
-  background-color: #000;
-  height: 35px;
-  display: block;
-  width: 118px;
-  text-align: center;
-  line-height: 28px;
-  color: #fff;
-
+  background-color: #fff;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: 15px 0;
+  span,
+  i {
+    color: #000 !important;
+  }
   text-transform: uppercase;
   font-family: Helvetica;
   font-weight: 700;
   font-size: 11px;
   border-radius: 15px;
-  margin-left: 20px;
+  // margin-left: 20px;
 }
 
 .btn:hover {
-  box-shadow: 0px 0px 4px #b1b1b1;
-  background: #5fa2db;
-}
-
-.btn:active {
-  box-shadow: 0px 0px 4px #b1b1b1 inset;
-  background: #5fa2db;
+  background-color: whitesmoke !important;
+  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
+    0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
 }

@@ -57,4 +57,8 @@ export class DataServiceService {
         console.log('Checked ERad');
       });
   }
+  changeTheme(primary: string,secondary:string) {
+    document.documentElement.style.setProperty('--primary-color', primary);
+    document.documentElement.style.setProperty('--secondary-color', secondary);
+  }
 }

@@ -1,0 +1,13 @@
+.settings{
+    position: absolute;
+    background: red;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    cursor: pointer;
+}

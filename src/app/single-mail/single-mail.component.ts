@@ -45,6 +45,4 @@ export class SingleMailComponent implements OnInit {
   unReadMail() {
     this.dataService.setEmailRead(this.id, false);
   }
-
-
 }
