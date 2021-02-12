@@ -1,3 +1,15 @@
+<div class="icon-holder">
+    <div class="icons-check">
+        <i class="material-icons">check_box_outline_blank</i>
+        <span class="material-icons">arrow_drop_down</span>
+        <i class="material-icons">refresh</i>
+        <i class="material-icons">more_vert</i>
+    </div>
+    <div class="pagination">
+        <i class="material-icons" (click)="previous()">keyboard_arrow_left</i>
+        <i class="material-icons" (click)="next()">keyboard_arrow_right</i>
+    </div>
+</div>
 <div class="mail-header-wrapper">
     <div class="mail-header" *ngFor="let label of labels" (click)="changeSelected(label.id)">
         <app-label [item]=label></app-label>
@@ -10,5 +22,5 @@
     (starredEmitter)="toggleMailStar($event)">
 </app-mail>
 <div *ngIf="!content || content.length ===0">
-    <h4>No Emails to Show</h4>
+    <h3>No Emails to Show</h3>
 </div>

@@ -22,16 +22,12 @@ export class DataServiceService {
       .subscribe((data) => {
         console.log("Successfully Deleted!");
         this.loaderEmitter.emit(false);
-
       }, (err) => {
         console.error("Failed to delete!");
         this.loaderEmitter.emit(false);
-
       });
   }
   toggleStarredMail(payload: any) {
-
-
     this.httpClient
       .put(environment.API_BASE_URL + '/e-mails-list/' + payload.id, {
         isStarred: payload.isStarred,
@@ -43,10 +39,14 @@ export class DataServiceService {
   }
   searchMailList(searchQuery: string) {
     this.loaderEmitter.emit(true);
-
     return this.httpClient
       .get(environment.API_BASE_URL + '/e-mails-list?search=' + searchQuery);
 
+  }
+  getContent(page:number,limit:number) {
+    this.loaderEmitter.emit(true);
+    return this.httpClient
+      .get(environment.API_BASE_URL + 'e-mails-list?page=' + page+'&limit='+limit);
   }
   setEmailRead(id: number, isReadMail: boolean) {
     this.httpClient

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import * as appConstants from "src/app/Core/constants/appConstants";
+import * as appConstants from 'src/app/Core/constants/appConstants';
 import { DataServiceService } from '../Core/Services/data-service.service';
 @Component({
   selector: 'app-email-wrapper',
@@ -9,24 +9,42 @@ import { DataServiceService } from '../Core/Services/data-service.service';
   styleUrls: ['./email-wrapper.component.scss'],
 })
 export class EmailWrapperComponent implements OnInit {
+  page: any = 1;
   content: any;
   labels: any;
-  constructor(private httpClient: HttpClient, private dataService: DataServiceService) { }
+  constructor(
+    private httpClient: HttpClient,
+    private dataService: DataServiceService
+  ) {}
   ngOnInit(): void {
     this.labels = appConstants.labels;
-    this.dataService.getData().subscribe(val => {
-      this.content = val
+    this.dataService.getData().subscribe((val) => {
+      this.content = val;
       this.dataService.loaderEmitter.emit(false);
     });
-
-    this.dataService.globalMailSearchEmitter.subscribe((val => {
-      this.dataService.searchMailList(val).subscribe(data => {
+    this.dataService.globalMailSearchEmitter.subscribe((val) => {
+      this.dataService.searchMailList(val).subscribe((data) => {
         this.content = data;
         this.dataService.loaderEmitter.emit(false);
       });
-    }));
+    });
   }
-
+  previous() {
+    if (this.page > 1) {
+      this.page = this.page - 1;
+      this.dataService.getContent(this.page, 30).subscribe((val) => {
+        this.content = val;
+        this.dataService.loaderEmitter.emit(false);
+      });
+    }
+  }
+  next() {
+    this.page = this.page + 1;
+    this.dataService.getContent(this.page + 1, 30).subscribe((val) => {
+      this.content = val;
+      this.dataService.loaderEmitter.emit(false);
+    });
+  }
   changeSelected(id: any) {
     var index = this.labels.findIndex((obj: any) => obj.selected == true);
     this.labels[index].selected = false;
@@ -40,5 +58,4 @@ export class EmailWrapperComponent implements OnInit {
   toggleMailStar(payload: any) {
     this.dataService.toggleStarredMail(payload);
   }
-
 }
