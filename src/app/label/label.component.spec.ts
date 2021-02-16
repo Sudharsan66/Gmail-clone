@@ -1,4 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DataServiceService } from '../Core/Services/data-service.service';
 
 import { LabelComponent } from './label.component';
 
@@ -8,11 +10,11 @@ describe('LabelComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LabelComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientTestingModule],
+      declarations: [LabelComponent],
+      providers: [DataServiceService],
+    }).compileComponents();
   });
-
   beforeEach(() => {
     fixture = TestBed.createComponent(LabelComponent);
     component = fixture.componentInstance;

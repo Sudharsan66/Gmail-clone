@@ -1,4 +1,4 @@
-<div class="label-wrapper {{item.selected?'selected':'not-selected'}}">
+<div *ngIf=item class="label-wrapper {{item.selected?'selected':'not-selected'}}">
     <div class="labels {{item.text}}">
         <i class="material-icons {{item.icon}}">{{item.icon}}</i>
         <div class="text">{{item.text}}</div>

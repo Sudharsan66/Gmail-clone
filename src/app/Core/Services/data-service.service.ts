@@ -28,20 +28,22 @@ export class DataServiceService {
       });
   }
   toggleStarredMail(payload: any) {
+    console.log(payload)
+    var value:any;
     this.httpClient
       .put(environment.API_BASE_URL + '/e-mails-list/' + payload.id, {
         isStarred: payload.isStarred,
       })
       .subscribe((data) => {
         console.log('Checked star');
-
+        value=data
       });
+      return value;
   }
   searchMailList(searchQuery: string) {
     this.loaderEmitter.emit(true);
     return this.httpClient
       .get(environment.API_BASE_URL + '/e-mails-list?search=' + searchQuery);
-
   }
   getContent(page:number,limit:number) {
     this.loaderEmitter.emit(true);

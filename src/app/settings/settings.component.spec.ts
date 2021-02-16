@@ -1,4 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DataServiceService } from '../Core/Services/data-service.service';
 
 import { SettingsComponent } from './settings.component';
 
@@ -8,11 +10,14 @@ describe('SettingsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SettingsComponent ]
+      imports: [
+        HttpClientTestingModule
+      ],
+      declarations: [ SettingsComponent ],
+      providers:[DataServiceService]
     })
     .compileComponents();
   });
-
   beforeEach(() => {
     fixture = TestBed.createComponent(SettingsComponent);
     component = fixture.componentInstance;
@@ -22,4 +27,5 @@ describe('SettingsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });

@@ -23,8 +23,6 @@ interface Email {
   styleUrls: ['./single-mail.component.scss']
 })
 export class SingleMailComponent implements OnInit {
-
-
   id: any;
   email: any;
   constructor(private route: ActivatedRoute, private httpClient: HttpClient, private dataService: DataServiceService) { }
@@ -32,14 +30,13 @@ export class SingleMailComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     console.log(this.id);
-
-    this.getSingleEmail().subscribe((data) => {
+    this.getSingleEmail(this.id).subscribe((data) => {
       console.log(data);
       this.email = data;
     });
     this.dataService.setEmailRead(this.id, true);
   }
-  getSingleEmail() {
+  getSingleEmail(id:any) {
     return this.httpClient.get(environment.API_BASE_URL + "/e-mails-list/" + this.id);
   }
   unReadMail() {

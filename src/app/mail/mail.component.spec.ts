@@ -1,4 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { DataServiceService } from '../Core/Services/data-service.service';
 
 import { MailComponent } from './mail.component';
 
@@ -8,8 +10,13 @@ describe('MailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MailComponent],
-    }).compileComponents();
+      imports: [
+        HttpClientTestingModule
+      ],
+      declarations: [ MailComponent ],
+      providers:[DataServiceService]
+    })
+    .compileComponents();
   });
 
   beforeEach(() => {
@@ -21,4 +28,6 @@ describe('MailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
+  
 });
